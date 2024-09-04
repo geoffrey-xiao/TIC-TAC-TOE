@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Sonarqube scan
-        uses: Crelex/sonarqube-action@v1.0.0
+        uses: Crelex/sonarqube-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
