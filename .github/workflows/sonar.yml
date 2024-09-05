@@ -19,3 +19,7 @@ jobs:
         with:
           host: ${{ secrets.SONAR_HOST_URL }}
           login: ${{ secrets.SONAR_TOKEN }}
+      - name: NPM install
+        run: npm install
+      - name: Trivy Scan
+        run: trivy fs . > trivyfs.txt
