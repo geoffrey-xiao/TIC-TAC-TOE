@@ -1,5 +1,5 @@
 # Use the official Node.js 16 image
-FROM node:16
+FROM node:16-alpine
 
 # Set the working directory in the container
 WORKDIR /app
@@ -8,6 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
+RUN npm config set registry https://registry.npmmirror.com
 RUN npm install
 
 # Copy the entire React app source code to the container
