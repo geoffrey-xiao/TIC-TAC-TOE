@@ -11,10 +11,6 @@ jobs:
     name: Build
     runs-on: [self-hosted]
     steps:
-      - name: clean workspace
-        run: |
-          sudo rm -rf /home/summer/actions-runner/_work/TIC-TAC-TOE/TIC-TAC-TOE/.scannerwork/report-task.txt
-          sudo rm -rf /home/summer/actions-runner/_work/TIC-TAC-TOE/TIC-TAC-TOE/.scannerwork/.sonar_lock
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
