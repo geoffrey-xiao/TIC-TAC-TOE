@@ -21,8 +21,7 @@ jobs:
           login: ${{ secrets.SONAR_TOKEN }}
       - name: NPM install
         run: |
-          npm config set proxy null
-          npm config set https-proxy null
+          npm config set noproxy "*"
           npm install
       - name: Trivy Scan
         run: trivy fs . > trivyfs.txt
