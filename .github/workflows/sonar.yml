@@ -11,13 +11,9 @@ jobs:
     name: Build
     runs-on: [self-hosted]
     steps:
-      - name: Clean workspace
-        run: |
-          sudo rm -rf $GITHUB_WORKSPACE
-          sudo mkdir -p $GITHUB_WORKSPACE
-          sudo chown -R $USER:$USER $GITHUB_WORKSPACE"
       - uses: actions/checkout@v2
         with:
+          clean: false
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Sonarqube scan
         uses: Crelex/sonarqube-action@v1.0
